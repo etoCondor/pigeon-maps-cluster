@@ -13,7 +13,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
-    "test": "tsc && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "react": "18.2.0",
