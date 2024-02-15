@@ -1,6 +1,6 @@
 {
   "name": "pigeon-maps-cluster",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "private": false,
   "author": "etoCondor",
@@ -42,8 +42,9 @@
       "dist"
     ]
   },
-  "publishConfig": {
-    "@etocondor:registry": "https://npm.pkg.github.com"
-  },
-  "keywords": ["pigeon-maps", "pigeon", "cluster"]
+  "keywords": ["pigeon-maps", "pigeon", "cluster"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etoCondor/pigeon-maps-cluster.git"
+  }
 }
