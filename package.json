@@ -44,6 +44,6 @@
     ]
   },
   "publishConfig": {
-    "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
+    "@etocondor:registry": "https://npm.pkg.github.com"
   }
 }
