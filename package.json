@@ -46,5 +46,5 @@
   "publishConfig": {
     "@etocondor:registry": "https://npm.pkg.github.com"
   },
-  "keywords": []
+  "keywords": ["pigeon-maps", "pigeon", "cluster"]
 }
