@@ -1,9 +1,8 @@
-# pigeon-map-cluster 
 # Cluster component for pigeon-maps
 
 
 ```
-$ npm install pigeon-map-cluster --save
+$ npm install pigeon-maps-cluster --save
 ```
 
 ```
