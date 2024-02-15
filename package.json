@@ -12,7 +12,8 @@
   "main": "dist/index.umd.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "vite build",
+    "test": "tsc"
   },
   "dependencies": {
     "react": "18.2.0",
