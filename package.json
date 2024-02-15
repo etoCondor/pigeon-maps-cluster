@@ -1,6 +1,6 @@
 {
   "name": "pigeon-maps-cluster",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "private": false,
   "author": "etoCondor",
@@ -12,8 +12,7 @@
   "main": "dist/index.umd.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && vite build",
-    "test": "tsc"
+    "build": "tsc && vite build"
   },
   "dependencies": {
     "react": "18.2.0",
