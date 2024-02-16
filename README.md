@@ -1,5 +1,9 @@
 # Cluster component for pigeon-maps
 
+[![npm version](https://img.shields.io/npm/v/pigeon-maps-cluster.svg)](https://www.npmjs.com/package/pigeon-maps-cluster)
+[![minified](https://img.shields.io/bundlephobia/min/pigeon-maps-cluster)](https://bundlephobia.com/result?p=pigeon-maps-cluster)
+[![minified + gzipped](https://img.shields.io/bundlephobia/minzip/pigeon-maps-cluster)](https://bundlephobia.com/result?p=pigeon-maps-cluster)
+
 ```
 $ npm install pigeon-maps-cluster --save
 ```
