@@ -98,11 +98,19 @@ export interface ClustererProps {
   minZoom?: number;
   minPoints?: number;
   clusterMarkerRadius?: number;
-  renderFunction?: (pointCount: number, markerPixelOffset?: [number, number]) => CSSProperties;
+  clusterStyleFunction?: (
+    pointCount: number,
+    markerPixelOffset?: [number, number],
+  ) => CSSProperties;
+  clusterRenderFunction?: (
+    pointCount: number,
+    markerPixelOffset?: [number, number],
+  ) => ReactElement;
 }
 
-export interface DefaultClusterMarkerProps {
+export interface ClusterMarkerProps {
   count: number;
   pixelOffset?: [number, number];
-  renderFunction: ClustererProps["renderFunction"];
+  clusterStyleFunction: ClustererProps["clusterStyleFunction"];
+  clusterRenderFunction: ClustererProps["clusterRenderFunction"];
 }

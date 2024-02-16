@@ -1,11 +1,12 @@
 import supercluster from "supercluster";
-import DefaultClusterMarker from "./DefaultClusterMarker";
+import ClusterMarker from "./ClusterMarker";
 import React, { FC, useCallback, useEffect, useState, cloneElement } from "react";
 import { Point, ClustererProps } from "./types";
 
 export const Cluster: FC<ClustererProps> = (props) => {
   const {
-    renderFunction,
+    clusterStyleFunction,
+    clusterRenderFunction,
     latLngToPixel,
     pixelToLatLng,
     mapState,
@@ -96,11 +97,12 @@ export const Cluster: FC<ClustererProps> = (props) => {
     if (isCluster) {
       const clusterElementKey = markerOrCluster.geometry.coordinates.toString();
       displayElement = (
-        <DefaultClusterMarker
+        <ClusterMarker
           key={clusterElementKey}
           count={markerOrCluster.properties.point_count}
           pixelOffset={pixelOffset}
-          renderFunction={renderFunction}
+          clusterStyleFunction={clusterStyleFunction}
+          clusterRenderFunction={clusterRenderFunction}
         />
       );
     } else {

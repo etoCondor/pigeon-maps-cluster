@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { DefaultClusterMarkerProps } from "./types";
+import React, { FC, useMemo } from "react";
+import { ClusterMarkerProps } from "./types";
 
 const colors = {
   small: ["rgba(181, 226, 140, 0.6)", "rgba(110, 204, 57, 0.7)"],
@@ -11,12 +11,13 @@ const defaultCountToColor = (count: number) => {
   return count > 20 ? colors.big : count > 7 ? colors.medium : colors.small;
 };
 
-const DefaultClusterMarker: FC<DefaultClusterMarkerProps> = ({
+const ClusterMarker: FC<ClusterMarkerProps> = ({
   pixelOffset,
   count,
-  renderFunction,
+  clusterStyleFunction,
+  clusterRenderFunction,
 }) => {
-  const markerStyle = renderFunction?.(count, pixelOffset) ?? {
+  const markerStyle = clusterStyleFunction?.(count, pixelOffset) ?? {
     width: 30,
     height: 30,
     borderRadius: "50%",
@@ -34,7 +35,13 @@ const DefaultClusterMarker: FC<DefaultClusterMarkerProps> = ({
     zIndex: 1,
     transform: "translate(-50%, -50%)",
   };
-  return <div style={markerStyle}>{count}</div>;
+
+  const Cluster = useMemo(() => {
+    if (clusterRenderFunction) return clusterRenderFunction(count, pixelOffset);
+    return <div style={markerStyle}>{count}</div>;
+  }, [count, pixelOffset, clusterRenderFunction]);
+
+  return Cluster;
 };
 
-export default DefaultClusterMarker;
+export default ClusterMarker;
