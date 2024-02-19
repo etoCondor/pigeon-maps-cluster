@@ -16,10 +16,11 @@ const ClusterMarker: FC<ClusterMarkerProps> = ({
   count,
   clusterStyleFunction,
   clusterRenderFunction,
+  clusterMarkerRadius,
 }) => {
   const markerStyle = clusterStyleFunction?.(count, pixelOffset) ?? {
-    width: 30,
-    height: 30,
+    width: clusterMarkerRadius / 2,
+    height: clusterMarkerRadius / 2,
     borderRadius: "50%",
     borderWidth: 3,
     borderColor: defaultCountToColor(count)[0],

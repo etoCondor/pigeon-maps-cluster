@@ -1,3 +1,7 @@
+## 1.0.4 (19.02.24)
+
+- Fixed clusterMarkerRadius property that did not affect default cluster style. Default cluster height and width are now 20px.
+
 ## 1.0.3 (17.02.24)
 
 - renderFunction renamed to clusterStyleFunction.

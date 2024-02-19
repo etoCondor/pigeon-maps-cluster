@@ -1,6 +1,6 @@
 {
   "name": "pigeon-maps-cluster",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "private": false,
   "author": "etoCondor",
@@ -20,7 +20,7 @@
     "supercluster": "^8.0.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.55",
+    "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.11.19",

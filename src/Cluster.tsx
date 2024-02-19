@@ -17,6 +17,7 @@ export const Cluster: FC<ClustererProps> = (props) => {
     minPoints = 2,
     children,
   } = props;
+
   const [state, setState] = useState<{ pointsMap?: Record<string, any>; index?: supercluster }>({});
 
   const generatePointsMap = useCallback(
@@ -103,6 +104,7 @@ export const Cluster: FC<ClustererProps> = (props) => {
           pixelOffset={pixelOffset}
           clusterStyleFunction={clusterStyleFunction}
           clusterRenderFunction={clusterRenderFunction}
+          clusterMarkerRadius={clusterMarkerRadius}
         />
       );
     } else {

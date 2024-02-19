@@ -113,4 +113,5 @@ export interface ClusterMarkerProps {
   pixelOffset?: [number, number];
   clusterStyleFunction: ClustererProps["clusterStyleFunction"];
   clusterRenderFunction: ClustererProps["clusterRenderFunction"];
+  clusterMarkerRadius: number;
 }
