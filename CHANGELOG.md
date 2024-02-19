@@ -1,3 +1,7 @@
+## 1.0.7 (19.02.24)
+
+- TS support.
+
 ## 1.0.6 (19.02.24)
 
 - Added onClick function.

@@ -1,13 +1,13 @@
 {
   "name": "pigeon-maps-cluster",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "private": false,
   "author": "etoCondor",
   "type": "module",
   "license": "MIT",
   "files": [
-    "dist/**/*"
+    "dist/*"
   ],
   "main": "dist/index.umd.js",
   "typings": "dist/index.d.ts",
