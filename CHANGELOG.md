@@ -1,3 +1,7 @@
+## 1.0.6 (19.02.24)
+
+- Added onClick function.
+
 ## 1.0.5 (19.02.24)
 
 - There was a mistake in previous version, so default cluster height and width are now 40px.

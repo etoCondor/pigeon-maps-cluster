@@ -17,6 +17,7 @@ const ClusterMarker: FC<ClusterMarkerProps> = ({
   clusterStyleFunction,
   clusterRenderFunction,
   clusterMarkerRadius,
+  onClusterClick,
 }) => {
   const markerStyle = clusterStyleFunction?.(count, pixelOffset) ?? {
     width: clusterMarkerRadius,
@@ -39,7 +40,11 @@ const ClusterMarker: FC<ClusterMarkerProps> = ({
 
   const Cluster = useMemo(() => {
     if (clusterRenderFunction) return clusterRenderFunction(count, pixelOffset);
-    return <div style={markerStyle}>{count}</div>;
+    return (
+      <div onClick={onClusterClick} style={markerStyle}>
+        {count}
+      </div>
+    );
   }, [count, pixelOffset, clusterRenderFunction]);
 
   return Cluster;

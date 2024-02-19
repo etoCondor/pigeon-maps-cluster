@@ -38,6 +38,7 @@ const coordinates = [
 | minZoom               | number                                                                      | 0         | Minimum zoom level at which clusters are generated.                                   |
 | maxZoom               | number                                                                      | 16        | Maximum zoom level at which clusters are generated.                                   |
 | minPoints             | number                                                                      | 2         | Minimum number of points to form a cluster.                                           |
+| onClick               | (data: ClusterData) => void                                                 | undefined | Function that is called when cluster is clicked.                                      |
 | clusterMarkerRadius   | number                                                                      | 40        | Cluster radius, in pixels. Used for generating cluster and for default cluster size.  |
 | clusterStyleFunction  | (pointCount: number, markerPixelOffset?: [number, number]) => CSSProperties | undefined | Function that can help you to modify default cluster view.                            |
 | clusterRenderFunction | (pointCount: number, markerPixelOffset?: [number, number]) => ReactElement  | undefined | Function that can help you to create your own cluster (ignores clusterStyleFunction). |

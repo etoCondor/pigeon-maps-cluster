@@ -106,6 +106,7 @@ export interface ClustererProps {
     pointCount: number,
     markerPixelOffset?: [number, number],
   ) => ReactElement;
+  onClick?: (data: ClusterData) => void;
 }
 
 export interface ClusterMarkerProps {
@@ -114,4 +115,14 @@ export interface ClusterMarkerProps {
   clusterStyleFunction: ClustererProps["clusterStyleFunction"];
   clusterRenderFunction: ClustererProps["clusterRenderFunction"];
   clusterMarkerRadius: number;
+  onClusterClick?: () => void;
+}
+
+export interface ClusterData {
+  cluster: boolean;
+  cluster_id: number;
+  coordinates: Point;
+  point_count: number;
+  point_count_abbreviated: number;
+  type: "Point";
 }

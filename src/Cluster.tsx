@@ -16,6 +16,7 @@ export const Cluster: FC<ClustererProps> = (props) => {
     minZoom = 0,
     minPoints = 2,
     children,
+    onClick,
   } = props;
 
   const [state, setState] = useState<{ pointsMap?: Record<string, any>; index?: supercluster }>({});
@@ -95,6 +96,13 @@ export const Cluster: FC<ClustererProps> = (props) => {
     let displayElement;
     const isCluster = markerOrCluster?.properties?.cluster;
     const pixelOffset = latLngToPixel?.(markerOrCluster.geometry.coordinates as Point);
+
+    const onClusterClick = () =>
+      onClick?.({
+        ...markerOrCluster.geometry,
+        ...markerOrCluster.properties,
+      });
+
     if (isCluster) {
       const clusterElementKey = markerOrCluster.geometry.coordinates.toString();
       displayElement = (
@@ -105,6 +113,7 @@ export const Cluster: FC<ClustererProps> = (props) => {
           clusterStyleFunction={clusterStyleFunction}
           clusterRenderFunction={clusterRenderFunction}
           clusterMarkerRadius={clusterMarkerRadius}
+          onClusterClick={onClusterClick}
         />
       );
     } else {
