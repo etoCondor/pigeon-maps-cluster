@@ -1,3 +1,7 @@
+## 1.0.8 (25.04.24)
+
+- Fixed minZoom and maxZoom maximums and minimums. Packages update.
+
 ## 1.0.7 (19.02.24)
 
 - TS support.

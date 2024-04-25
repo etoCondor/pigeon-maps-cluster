@@ -1,6 +1,6 @@
 import supercluster from "supercluster";
 import ClusterMarker from "./ClusterMarker";
-import React, { FC, useCallback, useEffect, useState, cloneElement } from "react";
+import React, { FC, useCallback, useEffect, useState, cloneElement, useMemo } from "react";
 import { Point, ClustererProps } from "./types";
 
 export const Cluster: FC<ClustererProps> = (props) => {
@@ -18,6 +18,23 @@ export const Cluster: FC<ClustererProps> = (props) => {
     children,
     onClick,
   } = props;
+
+  const maxClusterZoom: number = useMemo(() => {
+    if (maxZoom >= 0) return maxZoom;
+    return 16;
+  }, [maxZoom]);
+
+  const minClusterZoom: number = useMemo(() => {
+    if (maxClusterZoom < minZoom) {
+      return maxClusterZoom;
+    }
+
+    if (minZoom <= 16 && minZoom >= 0) {
+      return minZoom;
+    }
+
+    return 0;
+  }, [minZoom, maxClusterZoom]);
 
   const [state, setState] = useState<{ pointsMap?: Record<string, any>; index?: supercluster }>({});
 
@@ -56,14 +73,14 @@ export const Cluster: FC<ClustererProps> = (props) => {
     (pointsMap) => {
       const index = new supercluster({
         radius: clusterMarkerRadius || 40,
-        maxZoom,
-        minZoom,
+        maxZoom: maxClusterZoom,
+        minZoom: minClusterZoom,
         minPoints,
       });
       index.load(Object.keys(pointsMap).map((id) => pointsMap[id]));
       return index;
     },
-    [clusterMarkerRadius, maxZoom, minPoints, minZoom],
+    [clusterMarkerRadius, maxClusterZoom, minPoints, minClusterZoom],
   );
 
   const rebuildData = useCallback(
